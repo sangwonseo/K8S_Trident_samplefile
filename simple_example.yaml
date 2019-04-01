@@ -2,7 +2,7 @@
 - hosts: kubernetes-master-nodes  
 
   tasks:
-  - name: Copy backend config file
+  - name: Copy storageclass & PVC & Pod YAML Files 
     template: src=storageclass_ontap.yaml dest=/root
     
   - name: Creating basic storageclass 
