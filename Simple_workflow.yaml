@@ -2,5 +2,5 @@
 - hosts: kubernetes-master-nodes  
 
   tasks:
-  - name: Downloading Trident install bundle
-    shell: kubectl create -f 
+  - name: Creating basic storageclass 
+    shell: kubectl create -f storageclass_ontap.yaml
