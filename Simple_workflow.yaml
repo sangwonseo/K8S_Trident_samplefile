@@ -2,5 +2,10 @@
 - hosts: kubernetes-master-nodes  
 
   tasks:
+   - name: Copy backend config file
+    template: src=storageclass_ontap.yaml dest=/root
+    
   - name: Creating basic storageclass 
     shell: kubectl create -f storageclass_ontap.yaml
+    args:
+      chdir: /root
