@@ -6,7 +6,7 @@ spec:
   volumes:
     - name: task-pv-storage
       persistentVolumeClaim:
-       claimName: basic
+       claimName: basic-pvc
   containers:
     - name: task-pv-container
       image: nginx
