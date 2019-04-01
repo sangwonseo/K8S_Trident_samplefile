@@ -3,7 +3,7 @@
 
   tasks:
   - name: Copy storageclass & PVC & Pod YAML Files 
-    template: src=storageclass_ontap.yaml dest=/root
+    template: src=storageclass_ontap.yaml, basic-pvc.yaml dest=/root
     
   - name: Creating basic storageclass 
     shell: kubectl create -f storageclass_ontap.yaml
