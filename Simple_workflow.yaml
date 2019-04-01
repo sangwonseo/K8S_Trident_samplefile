@@ -1,0 +1,6 @@
+---
+- hosts: kubernetes-master-nodes  
+
+  tasks:
+  - name: Downloading Trident install bundle
+    shell: kubectl create -f 
