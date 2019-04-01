@@ -10,7 +10,7 @@
     args:
       chdir: /home/sangwon
 
-  - name: Copying Pvc  YAML File
+  - name: Copying Pvc YAML File
     template: src=basic-pvc.yaml dest=/home/sangwon
     
   - name: Creating basic pvc
