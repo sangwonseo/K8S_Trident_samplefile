@@ -2,7 +2,7 @@
 - hosts: kubernetes-master-nodes  
 
   tasks:
-  - name: Copy storageclass YAML File
+  - name: Copying Storageclass YAML File
     template: src=storageclass_ontap.yaml dest=/home/sangwon
     
   - name: Creating basic storageclass 
@@ -10,10 +10,18 @@
     args:
       chdir: /home/sangwon
 
-- name: Copying PVC  YAML File
+  - name: Copying Pvc  YAML File
     template: src=basic-pvc.yaml dest=/home/sangwon
     
   - name: Creating basic pvc
     shell: kubectl create -f basic-pvc.yaml
     args:
       chdir: /home/sangwon
+      
+  - name: Copying Pod YAML File
+    template: src=task-pv-pod.yaml dest=/home/sangwon
+    
+  - name: Creating Pod with Mounting Vol 
+    shell: kubectl create -f task-pv-pod.yaml
+    args:
+      chdir: /home/sangwon      
