@@ -1,11 +1,7 @@
-kind: PersistentVolumeClaim
-apiVersion: v1
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
 metadata:
-  name: basic
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 3Gi
-  storageClassName: basic
+  name: basic-sc
+provisioner: netapp.io/trident
+parameters:
+  backendType: ontap-nas
