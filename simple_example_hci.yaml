@@ -14,7 +14,7 @@
     template: src=sources/hci-basic-pvc.yaml dest=/home/sangwon
     
   - name: Creating basic pvc
-    shell: kubectl create -f basic-pvc.yaml
+    shell: kubectl create -f hci-basic-pvc.yaml
     args:
       chdir: /home/sangwon
       
